@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'Base_de_donnees/Database.dart';
 import 'ui/game.dart';
 import 'ui/menu.dart';
 
 void main() {
-  test();
   runApp(const MyApp());
 }
 
