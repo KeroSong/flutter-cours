@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:pendu/Modeles/liste_principal.dart';
 import 'package:pendu/Modeles/liste_listes.dart';
 import 'package:pendu/Modeles/liste_lettres.dart';
+import 'package:pendu/Modeles/mots.dart';
+import 'package:isar/isar.dart';
 
 final List<String> alphabet = [
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -59,4 +62,22 @@ void test () {
   listeprincipal.principalliste[2].ajouter('Magnanime');
   listeprincipal.principalliste[2].ajouter('Prerogative');
   listeprincipal.principalliste[2].ajouter('Inebranlable');
+}
+
+void test2() async {
+  final isar = await Isar.open(
+  [MotsSchema],
+  directory: 'test.isar',
+);
+
+  final mots = isar.mots;
+
+  final pancakes = Mots()
+  ..mot = 'Pancakes'
+  ..categorie = 1
+  ..modifiable = true;
+
+await isar.writeTxn(() async {
+  await mots.put(pancakes);
+});
 }

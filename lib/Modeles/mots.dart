@@ -1,4 +1,5 @@
 import 'package:isar/isar.dart';
+part 'mots.g.dart';
 
 @collection
 class Mots {

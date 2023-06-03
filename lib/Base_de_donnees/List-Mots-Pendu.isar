@@ -1,6 +1,6 @@
 List-Mots-Pendu.isar
 
-header : Version, Id, catégorie, mot, modifiable
+header : Version, Id, categorie, mot, modifiable
 
 Colomn 1 : ,,1,Chien,false
 Colomn 2 : ,,1,Maison,false
