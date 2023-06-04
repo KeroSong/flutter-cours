@@ -19,11 +19,11 @@ class _MenuScreenState extends State<MenuScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const Center(child: Text("salut")),
+            const Center(child: Text("Choix de la liste")),
             for (int i = 0; i < listeprincipal.principalliste.length; i++)
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  game(context, i);
                 },
                 child: Text(listeprincipal.principalliste[i].name),
               ),
