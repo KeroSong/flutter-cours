@@ -1,4 +1,4 @@
-import 'package:pendu/Modeles/liste_lettres.dart';
+import '../Modeles/liste_lettres.dart';
 
 class ListeListes {
   final int id;

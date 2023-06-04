@@ -1,5 +1,5 @@
-import 'package:pendu/Modeles/liste_listes.dart';
-import 'package:pendu/Modeles/liste_lettres.dart';
+import '../Modeles/liste_listes.dart';
+import '../Modeles/liste_lettres.dart';
 
 class ListePrincipal {
   final List<ListeListes> principalliste;
