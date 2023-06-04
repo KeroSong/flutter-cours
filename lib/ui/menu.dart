@@ -23,7 +23,7 @@ class _MenuScreenState extends State<MenuScreen> {
             for (int i = 0; i < listeprincipal.principalliste.length; i++)
               ElevatedButton(
                 onPressed: () {
-                  game(context, i);
+                  game(context, listeprincipal.principalliste[i].menuliste);
                 },
                 child: Text(listeprincipal.principalliste[i].name),
               ),

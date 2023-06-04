@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import '../Base_de_donnees/Database.dart';
 import '../fonctions/navigations.dart';
+import '../Modeles/liste_lettres.dart';
 
 class GameScreen extends StatefulWidget {
   int number = 0;
+  List<ListeLettre> liste = [];
   List<String> pendu = [];
 
-  GameScreen({super.key, required this.number, required this.pendu});
+  GameScreen({super.key, required this.number, required this.liste, required this.pendu});
 
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -25,15 +27,9 @@ class _GameScreenState extends State<GameScreen> {
     return TextButton(
       onPressed: () {
         setState(() {
-          for (int i = 0;
-              i <
-                  listeprincipal
-                      .principalliste[0].menuliste[widget.number].liste.length;
-              i++) {
-            if (listeprincipal.principalliste[0].menuliste[widget.number].liste[i] ==
-                buttonText) {
-              widget.pendu[i] =
-                  listeprincipal.principalliste[0].menuliste[widget.number].liste[i];
+          for (int i = 0; i < widget.liste[widget.number].liste.length; i++) {
+            if (widget.liste[widget.number].liste[i] == buttonText) {
+              widget.pendu[i] = widget.liste[widget.number].liste[i];
               // print(listeprincipal.principalliste[0].menuliste.length);
               // print(listeprincipal.principalliste[0].menuliste[1].liste);
               // print(listeprincipal.principalliste[0].menuliste[2].liste);

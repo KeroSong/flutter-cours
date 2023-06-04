@@ -4,13 +4,13 @@ import 'ui/menu.dart';
 import 'Base_de_donnees/database.dart';
 
 void main() {
-  final testfuture = fetchData();
+  /*final testfuture = fetchData();
 
   testfuture.then((_) {
     print('La fonction asynchrone est terminée');
   }).catchError((error) {
     print('Erreur lors de l\'appel de la fonction asynchrone : $error');
-  });
+  });*/
   runApp(const MyApp());
 }
 

@@ -4,24 +4,29 @@ import '../Base_de_donnees/Database.dart';
 import '../ui/endgame.dart';
 import '../ui/menu.dart';
 import '../ui/game.dart';
+import '../Modeles/liste_lettres.dart';
 
 void menu(BuildContext context) {
   Navigator.of(context)
       .push(MaterialPageRoute(builder: (context) => const MenuScreen()));
 }
 
-void game(BuildContext context, int liste) {
+void game(BuildContext context, List<ListeLettre> liste) {
   Random random = Random();
 
   int number = random.nextInt(
-    listeprincipal.principalliste[liste].menuliste.length
+    liste.length
   );
+
   List<String> pendu = List.generate(
-    listeprincipal.principalliste[liste].menuliste[number].liste.length, (index) => '_'
+    liste[number].liste.length, (index) => '_'
   ).toList();
 
   Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => GameScreen(number:number, pendu:pendu)));
+    builder: (context) => GameScreen(
+      number:number, liste:liste, pendu:pendu
+    )
+  ));/**/
 }
 
 void victoire(BuildContext context, List<String> pendu) {
