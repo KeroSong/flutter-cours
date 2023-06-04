@@ -26,7 +26,7 @@ void game(BuildContext context, List<ListeLettre> liste) {
     builder: (context) => GameScreen(
       number:number, liste:liste, pendu:pendu
     )
-  ));/**/
+  ));
 }
 
 void victoire(BuildContext context, List<String> pendu) {
