@@ -14,16 +14,16 @@ class _EndScreenState extends State<EndScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Fin du jeu")),
+      appBar: AppBar(title: const Text("Fin de jeu.")),
       body: SafeArea(
         child: Column(
           children: [
             Center(child: Text(widget.fin)),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  menu(context);
                 },
-                child: const Text("Menu"))
+                child: const Text("Retour au Menu"))
           ],
         ),
       ),
