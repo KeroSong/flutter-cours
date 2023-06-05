@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'ui/game.dart';
 import 'ui/menu.dart';
-import 'Base_de_donnees/database.dart';
 
 
 void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // json();
   runApp(const MyApp());
 }
 
