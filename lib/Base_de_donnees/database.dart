@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'dart:io';
-import 'package:path_provider/path_provider.dart';
-import 'package:isar/isar.dart';
 import '../Modeles/liste_principal.dart';
 import '../Modeles/liste_listes.dart';
 import '../Modeles/liste_lettres.dart';
-import '../Modeles/mots.dart';
 
 
 final List<String> alphabet = [
@@ -66,26 +62,4 @@ void test () {
   listeprincipal.principalliste[2].ajouter('Magnanime');
   listeprincipal.principalliste[2].ajouter('Prerogative');
   listeprincipal.principalliste[2].ajouter('Inebranlable');
-}
-
-Future<void> fetchData() async {
-// final dir = await getApplicationDocumentsDirectory();
-// print (dir.path);
-  final isar = await Isar.open(
-    [MotsSchema],
-    directory: '..\\Base_de_donnees\\test.isar',//'Base_de_donnees/test.isar',
-  );/**/
-
-  //final mots = isar.mots;
-
-  final pancakes = Mots()
-    ..mot = 'Pancakes'
-    ..categorie = 1
-    ..modifiable = true;
-
-  /*await isar.writeTxn(() async {
-    await mots.put(pancakes);
-  });*/
-
-  //await isar.close();//
 }
