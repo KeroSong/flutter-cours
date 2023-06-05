@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
+import 'dart:convert';
 import '../Modeles/liste_principal.dart';
 import '../Modeles/liste_listes.dart';
 import '../Modeles/liste_lettres.dart';
@@ -62,4 +64,17 @@ void test () {
   listeprincipal.principalliste[2].ajouter('Magnanime');
   listeprincipal.principalliste[2].ajouter('Prerogative');
   listeprincipal.principalliste[2].ajouter('Inebranlable');
+}
+
+Future<List<int>> jsonCategorie() async {
+  String jsonContent = await rootBundle.loadString('lib/Base_de_donnees/Pendu_Liste_Mots.json');
+
+  Map<String, dynamic> jsonData = jsonDecode(jsonContent);
+
+  List<dynamic> wordList = jsonData['mots'];
+
+  List<int> categories = wordList.map((item) => item['categorie'] as int).toList();
+
+  return categories;
+  // print(categories);
 }

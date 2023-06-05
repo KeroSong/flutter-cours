@@ -10,14 +10,28 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
+  List<int> listeCategorie = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  Future<void> loadData() async {
+    List<int> result = await jsonCategorie();
+    setState(() {
+      listeCategorie = result.toSet().toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     test();
-    //test2();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Menu"),
-        backgroundColor: Color.fromARGB(255, 25, 152, 248),
+        backgroundColor: const Color.fromARGB(255, 25, 152, 248),
       ),
       body: Container(
         color: const Color.fromARGB(255, 141, 205, 255),
@@ -31,20 +45,38 @@ class _MenuScreenState extends State<MenuScreen> {
                           255, 255, 255, 255), // Couleur du texte
                       fontWeight: FontWeight.bold, // Gras
                     ))),
-            for (int i = 0; i < listeprincipal.principalliste.length; i++)
+            for (int i = 0; i < listeCategorie.length; i++)
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    game(context, listeprincipal.principalliste[i].menuliste);
+                    switch (i) {
+                      case 0:
+                        game(context, listeprincipal.principalliste[0].menuliste);
+                        break;
+                      case 1:
+                        game(context, listeprincipal.principalliste[1].menuliste);
+                        break;
+                      case 2:
+                        game(context, listeprincipal.principalliste[2].menuliste);
+                        break;
+                      case 3:
+                        game(context, listeprincipal.principalliste[3].menuliste);
+                        break;
+                      case 4:
+                        game(context, listeprincipal.principalliste[4].menuliste);
+                        break;
+                      default:
+                        break;
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(
                         255, 82, 175, 252), // Couleur de fond du bouton
                   ),
                   child: Text(
-                    listeprincipal.principalliste[i].name,
-                    style: TextStyle(
+                    _getButtonText(i),
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
@@ -61,5 +93,22 @@ class _MenuScreenState extends State<MenuScreen> {
         child: const Icon(Icons.add),
       ),
     );
+  }
+}
+
+String _getButtonText(int index) {
+  switch (index) {
+    case 0:
+      return 'mots simples';
+    case 1:
+      return 'mots moyens';
+    case 2:
+      return 'mots difficiles';
+    case 3:
+      return 'Vtubers';
+    case 4:
+      return 'Liste perso';
+    default:
+      return "";
   }
 }
