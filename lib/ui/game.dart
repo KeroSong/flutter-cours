@@ -8,7 +8,11 @@ class GameScreen extends StatefulWidget {
   List<ListeLettre> liste = [];
   List<String> pendu = [];
 
-  GameScreen({super.key, required this.number, required this.liste, required this.pendu});
+  GameScreen(
+      {super.key,
+      required this.number,
+      required this.liste,
+      required this.pendu});
 
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -49,7 +53,7 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Color.fromARGB(255, 25, 152, 248),
         title: const Text('Demo Pendu'),
       ),
       body: Container(
@@ -74,7 +78,8 @@ class _GameScreenState extends State<GameScreen> {
                       color: Colors.green,
                       height: 150,
                       width: 170,
-                      child: const Text('ceci sera une image'),
+                      child:
+                          Image.asset('lib/Base_de_donnees/Images/Pendu1.png'),
                     ),
                   ),
                 ],

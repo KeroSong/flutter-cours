@@ -14,8 +14,12 @@ class _EndScreenState extends State<EndScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Fin de jeu.")),
-      body: SafeArea(
+      appBar: AppBar(
+        title: const Text("Fin de jeu."),
+        backgroundColor: Color.fromARGB(255, 25, 152, 248),
+      ),
+      body: Container(
+        color: const Color.fromARGB(255, 141, 205, 255),
         child: Column(
           children: [
             Center(child: Text(widget.fin)),

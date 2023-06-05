@@ -15,8 +15,12 @@ class _MenuScreenState extends State<MenuScreen> {
     test();
     //test2();
     return Scaffold(
-      appBar: AppBar(title: const Text("Menu")),
-      body: SafeArea(
+      appBar: AppBar(
+        title: const Text("Menu"),
+        backgroundColor: Color.fromARGB(255, 25, 152, 248),
+      ),
+      body: Container(
+        color: const Color.fromARGB(255, 141, 205, 255),
         child: Column(
           children: [
             const Center(child: Text("Choix de la liste")),
@@ -29,6 +33,11 @@ class _MenuScreenState extends State<MenuScreen> {
               ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
     );
   }
