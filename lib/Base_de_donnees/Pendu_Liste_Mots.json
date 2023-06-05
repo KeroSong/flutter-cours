@@ -1,0 +1,364 @@
+{
+  "mots": [
+    {
+      "id": 0,
+      "mot": ["C", "H", "A", "T"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 1,
+      "mot": ["C", "H", "I", "E", "N"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 2,
+      "mot": ["M", "A", "I", "S", "O", "N"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 3,
+      "mot": ["S", "O", "L", "E", "I", "L"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 4,
+      "mot": ["P", "O", "M", "M", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 5,
+      "mot": ["A", "R", "B", "R", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 6,
+      "mot": ["E", "C", "O", "L", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 7,
+      "mot": ["L", "I", "V", "R", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 8,
+      "mot": ["V", "O", "I", "T", "U", "R", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 9,
+      "mot": ["F", "L", "E", "U", "R"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 10,
+      "mot": ["N", "E", "Z"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 11,
+      "mot": ["L", "A", "C"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 12,
+      "mot": ["R", "I", "R", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 13,
+      "mot": ["M", "A", "I", "N"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 14,
+      "mot": ["B", "E", "U", "R", "R", "E"],
+      "modifiable": false,
+      "categorie": 0
+    },
+    {
+      "id": 15,
+      "mot": ["E", "C", "U", "R", "E", "U", "I", "L"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 16,
+      "mot": ["B", "I", "B", "L", "I", "O", "T", "H", "E", "Q", "U", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 17,
+      "mot": ["M", "O", "N", "T", "A", "G", "N", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 18,
+      "mot": ["O", "R", "D", "I", "N", "A", "T", "E", "U", "R"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 19,
+      "mot": ["M", "U", "S", "I", "Q", "U", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 20,
+      "mot": ["A", "V", "I", "O", "N"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 21,
+      "mot": ["P", "L", "U", "I", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 22,
+      "mot": ["C", "H", "E", "M", "I", "N", "E", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 23,
+      "mot": ["F", "O", "O", "T", "B", "A", "L", "L"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 24,
+      "mot": ["E", "T", "O", "I", "L", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 25,
+      "mot": ["T", "E", "L", "E", "P", "H", "O", "N", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 26,
+      "mot": ["R", "E", "S", "T", "A", "U", "R", "A", "N", "T"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 27,
+      "mot": ["G", "U", "I", "T", "A", "R", "E"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 28,
+      "mot": ["E", "L", "E", "P", "H", "A", "N", "T"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 29,
+      "mot": ["C", "A", "M", "E", "R", "A"],
+      "modifiable": false,
+      "categorie": 1
+    },
+    {
+      "id": 30,
+      "mot": ["E", "X", "C", "E", "N", "T", "R", "I", "Q", "U", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 31,
+      "mot": ["E", "X", "T", "R", "A", "V", "A", "G", "A", "N", "T"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 32,
+      "mot": ["E", "N", "I", "G", "M", "A", "T", "I", "Q", "U", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 33,
+      "mot": ["D", "E", "C", "O", "N", "C", "E", "R", "T", "A", "N", "T"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 34,
+      "mot": ["E", "P", "O", "U", "S", "T", "O", "U", "F", "L", "A", "N", "T"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 35,
+      "mot": ["I", "N", "E", "V", "I", "T", "A", "B", "L", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 36,
+      "mot": ["S", "O", "P", "H", "I", "S", "T", "I", "Q", "U", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 37,
+      "mot": ["R", "E", "S", "I", "L", "I", "E", "N", "C", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 38,
+      "mot": ["E", "P", "H", "E", "M", "E", "R", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 39,
+      "mot": ["I", "N", "C", "O", "M", "P", "R", "E", "H", "E", "N", "S", "I", "B", "L", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 40,
+      "mot": ["A", "U", "T", "H", "E", "N", "T", "I", "Q", "U", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 41,
+      "mot": ["A", "M", "B", "I", "G", "U", "I", "T", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 42,
+      "mot": ["M", "A", "G", "N", "A", "N", "I", "M", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 43,
+      "mot": ["P", "R", "E", "R", "O", "G", "A", "T", "I", "V", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 44,
+      "mot": ["I", "N", "E", "B", "R", "A", "N", "L", "A", "B", "L", "E"],
+      "modifiable": false,
+      "categorie": 2
+    },
+    {
+      "id": 45,
+      "mot": ["N", "I", "I", "O", "O", "R"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 46,
+      "mot": ["M", "E", "L", "O", "U", "N", "I", "A"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 47,
+      "mot": ["I", "Z", "U", "M", "I", "C", "H", "A", "N"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 48,
+      "mot": ["F", "L", "Y", "R", "E", "M", "O", "O", "N"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 49,
+      "mot": ["E", "N", "D", "O", "K", "U", "C", "H", "A", "N"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 50,
+      "mot": ["K", "A", "T", "C", "H", "A", "N", "V", "T"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 51,
+      "mot": ["R", "I", "N", "L", "U", "K", "A"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 52,
+      "mot": ["E", "L", "D", "I", "N", "Y", "A"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 53,
+      "mot": ["I", "M", "M", "I", "N", "M", "I", "N"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 54,
+      "mot": ["N", "E", "N", "Y", "A", "K", "U", "T", "E"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 55,
+      "mot": ["C", "A", "P", "I", "T", "A", "I", "N", "E", "O", "R", "P", "H", "Y"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 56,
+      "mot": ["M", "I", "S", "S", "S", "I", "L", "L", "I", "C", "A"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 57,
+      "mot": ["A", "R", "C", "A", "N", "N", "N"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 58,
+      "mot": ["K", "I", "T", "S", "U", "N", "A", "R", "U", "M", "I"],
+      "modifiable": false,
+      "categorie": 3
+    },
+    {
+      "id": 59,
+      "mot": ["A", "Z", "I", "L", "L", "Y", "S"],
+      "modifiable": false,
+      "categorie": 3
+    }
+  ]
+}

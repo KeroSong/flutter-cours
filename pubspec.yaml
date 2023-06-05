@@ -26,7 +26,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-    assets: 
+  assets: 
     - lib/Base_de_donnees/Images/Pendu1.png
     - lib/Base_de_donnees/Images/Pendu2.png
     - lib/Base_de_donnees/Images/Pendu3.png
