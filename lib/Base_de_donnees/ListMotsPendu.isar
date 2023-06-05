@@ -1,4 +1,4 @@
-List-Mots-Pendu.isar
+ListMotsPendu.isar
 
 header : Version, Id, categorie, mot, modifiable
 

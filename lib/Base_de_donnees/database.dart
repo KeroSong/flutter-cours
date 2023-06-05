@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+// import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import 'package:isar/isar.dart';
 import '../Modeles/liste_principal.dart';
 import '../Modeles/liste_listes.dart';
 import '../Modeles/liste_lettres.dart';
 import '../Modeles/mots.dart';
+
 
 final List<String> alphabet = [
   'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
@@ -66,9 +69,11 @@ void test () {
 }
 
 Future<void> fetchData() async {
+// final dir = await getApplicationDocumentsDirectory();
+// print (dir.path);
   final isar = await Isar.open(
     [MotsSchema],
-    directory: 'W:/Android/Projects/flutter-cours/Base_de_donnees/test.isar',
+    directory: '..\\Base_de_donnees\\test.isar',//'Base_de_donnees/test.isar',
   );/**/
 
   //final mots = isar.mots;
@@ -82,5 +87,5 @@ Future<void> fetchData() async {
     await mots.put(pancakes);
   });*/
 
-  await isar.close();//
+  //await isar.close();//
 }
