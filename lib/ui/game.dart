@@ -47,10 +47,11 @@ class _GameScreenState extends State<GameScreen> {
     List<String> result = await jsonMots(number, widget.categorie);
     setState(() {
       liste = result[0].split('');
-      compteurVictoire = liste.length;
       pendu = List.generate(
-        liste.length, (index) => '_'
+        liste.length,
+        (index) => (liste[index] == '-') ? '-' : '_',
       ).toList();
+      compteurVictoire = pendu.where((element) => element != '-').length;
       mot = liste.join('');
     });
   }

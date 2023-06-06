@@ -11,23 +11,18 @@ dependencies:
   flutter:
     sdk: flutter
   http: ^0.13.6
-  path_provider: 2.0.15
 
   cupertino_icons: ^1.0.2
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  isar_generator: ^3.1.0+1
-  build_runner: ^2.4.4
 
 flutter:
   uses-material-design: true
   assets: 
-    - lib/Base_de_donnees/Pendu_Liste_Mots.json
+    - Data/Pendu_Liste_Mots.json
     - lib/Base_de_donnees/Images/Pendu1.png
     - lib/Base_de_donnees/Images/Pendu2.png
     - lib/Base_de_donnees/Images/Pendu3.png
@@ -35,3 +30,4 @@ flutter:
     - lib/Base_de_donnees/Images/Pendu5.png
     - lib/Base_de_donnees/Images/Pendu6.png
     - lib/Base_de_donnees/Images/Pendu7.png
+    - lib/Base_de_donnees/Images/Victoire.jpg

@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
+import 'dart:io';
 
 
 final List<String> alphabet = [
@@ -8,7 +9,7 @@ final List<String> alphabet = [
 ];
 
 Future<List<int>> jsonCategorie() async {
-  String jsonContent = await rootBundle.loadString('lib/Base_de_donnees/Pendu_Liste_Mots.json');
+  String jsonContent = await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 
@@ -20,7 +21,7 @@ Future<List<int>> jsonCategorie() async {
 }
 
 Future<List<String>> jsonMots(int random, int categorie) async {
-  String jsonContent = await rootBundle.loadString('lib/Base_de_donnees/Pendu_Liste_Mots.json');
+  String jsonContent = await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 

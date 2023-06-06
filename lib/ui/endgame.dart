@@ -29,7 +29,7 @@ class _EndScreenState extends State<EndScreen> {
             Center(
               child: Text(widget.fin,
                 style: const TextStyle(
-                  fontSize: 20, // Taille du texte
+                  fontSize: 30, // Taille du texte
                   color: Color.fromARGB(255, 255, 255, 255), // Couleur du texte
                   fontWeight: FontWeight.bold, // Gras
                 )
@@ -69,7 +69,7 @@ class _EndScreenState extends State<EndScreen> {
 Image _getImageEnd(String index) {
   switch (index) {
     case 'Victoire':
-      return Image.asset('lib/Base_de_donnees/Images/Pendu1.png');
+      return Image.asset('lib/Base_de_donnees/Images/Victoire.jpg');
     default:
       return Image.asset('lib/Base_de_donnees/Images/Pendu7.png');
   }

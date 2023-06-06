@@ -39,7 +39,7 @@ class _MenuScreenState extends State<MenuScreen> {
             const Center(
                 child: Text("Choix de la liste",
                     style: TextStyle(
-                      fontSize: 20, // Taille du texte
+                      fontSize: 30, // Taille du texte
                       color: Color.fromARGB(255, 255, 255, 255), // Couleur du texte
                       fontWeight: FontWeight.bold, // Gras
                     )
@@ -86,11 +86,11 @@ class _MenuScreenState extends State<MenuScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      /*floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ),
+      ),*/
     );
   }
 }
