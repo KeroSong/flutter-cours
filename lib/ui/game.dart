@@ -6,9 +6,7 @@ import '../fonctions/navigations.dart';
 class GameScreen extends StatefulWidget {
   int categorie = 0;
 
-  GameScreen(
-      {super.key,
-      required this.categorie});
+  GameScreen({super.key, required this.categorie});
 
   @override
   State<GameScreen> createState() => _GameScreenState();
@@ -36,8 +34,7 @@ class _GameScreenState extends State<GameScreen> {
     setState(() {
       categorieNumber = result.toList();
       number = random.nextInt(
-        categorieNumber.where((number) => number == widget.categorie).length
-      );
+          categorieNumber.where((number) => number == widget.categorie).length);
 
       loadDataMots(number);
     });
@@ -56,35 +53,52 @@ class _GameScreenState extends State<GameScreen> {
     });
   }
 
-  Widget buildKeyboardButton(String buttonText) {
-    return TextButton(
-      onPressed: () {
-        setState(() {
-          int compteur = 0;
-          for (int i = 0; i < liste.length; i++) {
-            if (liste[i] == buttonText && pendu[i] == '_') {
-              pendu[i] = liste[i];
-              compteurVictoire--;
-            }
-            else {
-              compteur++;
-            }
+  List<bool> isButtonDisabled = List.generate(
+    alphabet.length,
+    (index) => false,
+  );
+  Widget buildKeyboardButton(String buttonText, int index) {
+    bool isLetterInPendu =
+        liste.contains(buttonText) && pendu.contains(buttonText);
 
-            if (compteurVictoire == 0) {
-              victoire(context, mot);
-            }
-          }
-          if (compteur == liste.length) {
-            compteurDefaite++;
-          }
-          if (compteurDefaite == 6) {
-            gameover(context, mot);
-          }
-        });
-      },
-      child: Text(
-        buttonText,
-        style: const TextStyle(fontSize: 24.0),
+    return Container(
+      margin: const EdgeInsets.all(4.0),
+      child: TextButton(
+        onPressed: isButtonDisabled[index]
+            ? null
+            : () {
+                setState(() {
+                  int compteur = 0;
+                  for (int i = 0; i < liste.length; i++) {
+                    if (liste[i] == buttonText && pendu[i] == '_') {
+                      pendu[i] = liste[i];
+                      compteurVictoire--;
+                    } else {
+                      compteur++;
+                    }
+
+                    if (compteurVictoire == 0) {
+                      victoire(context, mot);
+                    }
+                  }
+                  if (compteur == liste.length) {
+                    compteurDefaite++;
+                  }
+                  if (compteurDefaite == 6) {
+                    gameover(context, mot);
+                  }
+                  isButtonDisabled[index] = true;
+                });
+              },
+        style: ButtonStyle(
+          backgroundColor: isLetterInPendu
+              ? MaterialStateProperty.all<Color>(Colors.green)
+              : MaterialStateProperty.all<Color>(Colors.red),
+        ),
+        child: Text(
+          buttonText,
+          style: const TextStyle(fontSize: 24.0, color: Colors.white),
+        ),
       ),
     );
   }
@@ -131,7 +145,7 @@ class _GameScreenState extends State<GameScreen> {
               child: GridView.count(
                 crossAxisCount: 13,
                 children: List.generate(alphabet.length, (index) {
-                  return buildKeyboardButton(alphabet[index]);
+                  return buildKeyboardButton(alphabet[index], index);
                 }),
               ),
             )
