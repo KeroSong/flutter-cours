@@ -1,44 +1,83 @@
 import 'package:flutter/material.dart';
-import '../Base_de_donnees/Database.dart';
+import 'dart:math';
+import '../Base_de_donnees/database.dart';
 import '../fonctions/navigations.dart';
-import '../Modeles/liste_lettres.dart';
 
 class GameScreen extends StatefulWidget {
-  int number = 0;
-  List<ListeLettre> liste = [];
-  List<String> pendu = [];
+  int categorie = 0;
 
   GameScreen(
       {super.key,
-      required this.number,
-      required this.liste,
-      required this.pendu});
+      required this.categorie});
 
   @override
   State<GameScreen> createState() => _GameScreenState();
 }
 
 class _GameScreenState extends State<GameScreen> {
-  /*int _counter = 0;
+  List<int> listeCategorie = [];
+  Random random = Random();
+  List<int> categorieNumber = [];
+  int number = 0;
+  List<String> liste = [];
+  List<String> pendu = [];
+  String mot = '';
+  int compteurVictoire = 0;
+  int compteurDefaite = 0;
 
-  void _incrementCounter() {
+  @override
+  void initState() {
+    super.initState();
+    loadDataCategorie();
+  }
+
+  Future<void> loadDataCategorie() async {
+    List<int> result = await jsonCategorie();
     setState(() {
-      _counter++;
+      categorieNumber = result.toList();
+      number = random.nextInt(
+        categorieNumber.where((number) => number == widget.categorie).length
+      );
+
+      loadDataMots(number);
     });
-  }*/
+  }
+
+  Future<void> loadDataMots(int number) async {
+    List<String> result = await jsonMots(number, widget.categorie);
+    setState(() {
+      liste = result[0].split('');
+      compteurVictoire = liste.length;
+      pendu = List.generate(
+        liste.length, (index) => '_'
+      ).toList();
+      mot = liste.join('');
+    });
+  }
 
   Widget buildKeyboardButton(String buttonText) {
     return TextButton(
       onPressed: () {
         setState(() {
-          for (int i = 0; i < widget.liste[widget.number].liste.length; i++) {
-            if (widget.liste[widget.number].liste[i] == buttonText) {
-              widget.pendu[i] = widget.liste[widget.number].liste[i];
-              // print(listeprincipal.principalliste[0].menuliste.length);
-              // print(listeprincipal.principalliste[0].menuliste[1].liste);
-              // print(listeprincipal.principalliste[0].menuliste[2].liste);
+          int compteur = 0;
+          for (int i = 0; i < liste.length; i++) {
+            if (liste[i] == buttonText && pendu[i] == '_') {
+              pendu[i] = liste[i];
+              compteurVictoire--;
             }
-            victoire(context, widget.pendu);
+            else {
+              compteur++;
+            }
+
+            if (compteurVictoire == 0) {
+              victoire(context, mot);
+            }
+          }
+          if (compteur == liste.length) {
+            compteurDefaite++;
+          }
+          if (compteurDefaite == 6) {
+            gameover(context, mot);
           }
         });
       },
@@ -53,8 +92,8 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 25, 152, 248),
-        title: const Text('Demo Pendu'),
+        backgroundColor: const Color.fromARGB(255, 25, 152, 248),
+        title: const Text('Jeu du Pendu'),
       ),
       body: Container(
         color: const Color.fromARGB(255, 141, 205, 255),
@@ -69,18 +108,12 @@ class _GameScreenState extends State<GameScreen> {
                   ),
                   Expanded(
                     flex: 4,
-                    child: Text(listeprincipal.principalliste[0].name,
+                    child: Text(_getTittleText(widget.categorie),
                         style: const TextStyle(fontSize: 20.0)),
                   ),
                   Expanded(
                     flex: 3,
-                    child: Container(
-                      color: Colors.green,
-                      height: 150,
-                      width: 170,
-                      child:
-                          Image.asset('lib/Base_de_donnees/Images/Pendu1.png'),
-                    ),
+                    child: _getImagePendu(compteurDefaite),
                   ),
                 ],
               ),
@@ -89,7 +122,7 @@ class _GameScreenState extends State<GameScreen> {
                 flex: 5,
                 child: Center(
                   child: Text(
-                    widget.pendu.join(' '),
+                    pendu.join(' '),
                     style: const TextStyle(fontSize: 44.0),
                   ),
                 )),
@@ -101,21 +134,45 @@ class _GameScreenState extends State<GameScreen> {
                 }),
               ),
             )
-            /*const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),*/
           ],
         ),
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),*/
     );
+  }
+}
+
+String _getTittleText(int index) {
+  switch (index) {
+    case 0:
+      return 'mots simples';
+    case 1:
+      return 'mots moyens';
+    case 2:
+      return 'mots difficiles';
+    case 3:
+      return 'Vtubers';
+    case 4:
+      return 'Liste perso';
+    default:
+      return "";
+  }
+}
+
+Image _getImagePendu(int index) {
+  switch (index) {
+    case 0:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu1.png');
+    case 1:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu2.png');
+    case 2:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu3.png');
+    case 3:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu4.png');
+    case 4:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu5.png');
+    case 5:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu6.png');
+    default:
+      return Image.asset('lib/Base_de_donnees/Images/Pendu7.png');
   }
 }

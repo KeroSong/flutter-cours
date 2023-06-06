@@ -1,50 +1,27 @@
 import 'package:flutter/material.dart';
-import 'dart:math';
-import '../Base_de_donnees/Database.dart';
 import '../ui/endgame.dart';
 import '../ui/menu.dart';
 import '../ui/game.dart';
-import '../Modeles/liste_lettres.dart';
 
 void menu(BuildContext context) {
   Navigator.of(context)
       .push(MaterialPageRoute(builder: (context) => const MenuScreen()));
 }
 
-void game(BuildContext context, List<ListeLettre> liste) {
-  Random random = Random();
-
-  int number = random.nextInt(
-    liste.length
-  );
-
-  List<String> pendu = List.generate(
-    liste[number].liste.length, (index) => '_'
-  ).toList();
-
+void game(BuildContext context, int categorie) async {
   Navigator.of(context).push(MaterialPageRoute(
     builder: (context) => GameScreen(
-      number:number, liste:liste, pendu:pendu
+      categorie:categorie
     )
   ));
 }
 
-void victoire(BuildContext context, List<String> pendu) {
-  for (int i = 0; i < pendu.length; i++) {
-    if (pendu[i] == '_') {
-      return;
-    }
-  }
+void victoire(BuildContext context, String mot) {
   Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const EndScreen(fin: 'Victoire')));
+      builder: (context) => EndScreen(fin: 'Victoire', mot: mot)));
 }
 
-void gameover(BuildContext context, List<String> pendu) {
-  for (int i = 0; i < pendu.length; i++) {
-    if (pendu[i] == '_') {
-      return;
-    }
-  }
+void gameover(BuildContext context, String mot) {
   Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => const EndScreen(fin: 'Game Over')));
+      builder: (context) => EndScreen(fin: 'Game Over', mot: mot)));
 }

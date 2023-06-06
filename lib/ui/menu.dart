@@ -15,10 +15,10 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   void initState() {
     super.initState();
-    loadData();
+    loadDataCategorie();
   }
 
-  Future<void> loadData() async {
+  Future<void> loadDataCategorie() async {
     List<int> result = await jsonCategorie();
     setState(() {
       listeCategorie = result.toSet().toList();
@@ -27,7 +27,6 @@ class _MenuScreenState extends State<MenuScreen> {
 
   @override
   Widget build(BuildContext context) {
-    test();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Menu"),
@@ -41,10 +40,11 @@ class _MenuScreenState extends State<MenuScreen> {
                 child: Text("Choix de la liste",
                     style: TextStyle(
                       fontSize: 20, // Taille du texte
-                      color: Color.fromARGB(
-                          255, 255, 255, 255), // Couleur du texte
+                      color: Color.fromARGB(255, 255, 255, 255), // Couleur du texte
                       fontWeight: FontWeight.bold, // Gras
-                    ))),
+                    )
+                )
+            ),
             for (int i = 0; i < listeCategorie.length; i++)
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -52,27 +52,26 @@ class _MenuScreenState extends State<MenuScreen> {
                   onPressed: () {
                     switch (i) {
                       case 0:
-                        game(context, listeprincipal.principalliste[0].menuliste);
+                        game(context, i);
                         break;
                       case 1:
-                        game(context, listeprincipal.principalliste[1].menuliste);
+                        game(context, i);
                         break;
                       case 2:
-                        game(context, listeprincipal.principalliste[2].menuliste);
+                        game(context, i);
                         break;
                       case 3:
-                        game(context, listeprincipal.principalliste[3].menuliste);
+                        game(context, i);
                         break;
                       case 4:
-                        game(context, listeprincipal.principalliste[4].menuliste);
+                        game(context, i);
                         break;
                       default:
                         break;
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(
-                        255, 82, 175, 252), // Couleur de fond du bouton
+                    backgroundColor: const Color.fromARGB(255, 82, 175, 252), // Couleur de fond du bouton
                   ),
                   child: Text(
                     _getButtonText(i),
