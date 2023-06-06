@@ -103,7 +103,7 @@ class _GameScreenState extends State<GameScreen> {
         ),
         child: Text(
           buttonText,
-          style: const TextStyle(fontSize: 18.0, color: Colors.white),
+          style: const TextStyle(fontSize: 19.0, color: Colors.white),
         ),
       ),
     );
