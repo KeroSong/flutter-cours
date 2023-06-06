@@ -57,9 +57,16 @@ class _GameScreenState extends State<GameScreen> {
     alphabet.length,
     (index) => false,
   );
+  List<bool> isButtonActive = List.generate(
+    alphabet.length,
+    (index) => false,
+  );
   Widget buildKeyboardButton(String buttonText, int index) {
     bool isLetterInPendu =
         liste.contains(buttonText) && pendu.contains(buttonText);
+    Color buttonColor = isButtonActive[index]
+        ? (isLetterInPendu ? Colors.green : Colors.red)
+        : Colors.grey;
 
     return Container(
       margin: const EdgeInsets.all(4.0),
@@ -88,16 +95,15 @@ class _GameScreenState extends State<GameScreen> {
                     gameover(context, mot);
                   }
                   isButtonDisabled[index] = true;
+                  isButtonActive[index] = true;
                 });
               },
         style: ButtonStyle(
-          backgroundColor: isLetterInPendu
-              ? MaterialStateProperty.all<Color>(Colors.green)
-              : MaterialStateProperty.all<Color>(Colors.red),
+          backgroundColor: MaterialStateProperty.all<Color>(buttonColor),
         ),
         child: Text(
           buttonText,
-          style: const TextStyle(fontSize: 24.0, color: Colors.white),
+          style: const TextStyle(fontSize: 18.0, color: Colors.white),
         ),
       ),
     );
