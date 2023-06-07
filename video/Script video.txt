@@ -1,0 +1,6 @@
+montrer une partie "normale" --> lancement du programme en direct
+    dire que cela fonctionne en interface web.
+    choisir une difficulté (idéalement faire pour les 4)
+    indiquer que le bouton "plus" ne fonctionne pas mais que c'est laissé pour un futur correctif
+Présenter du code ?
+    présenter la structure du main, UI et database.
