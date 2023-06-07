@@ -40,11 +40,10 @@ class _MenuScreenState extends State<MenuScreen> {
                 child: Text("Choix de la liste",
                     style: TextStyle(
                       fontSize: 30, // Taille du texte
-                      color: Color.fromARGB(255, 255, 255, 255), // Couleur du texte
+                      color: Color.fromARGB(
+                          255, 255, 255, 255), // Couleur du texte
                       fontWeight: FontWeight.bold, // Gras
-                    )
-                )
-            ),
+                    ))),
             for (int i = 0; i < listeCategorie.length; i++)
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -71,7 +70,8 @@ class _MenuScreenState extends State<MenuScreen> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 82, 175, 252), // Couleur de fond du bouton
+                    backgroundColor: const Color.fromARGB(
+                        255, 82, 175, 252), // Couleur de fond du bouton
                   ),
                   child: Text(
                     _getButtonText(i),
@@ -83,14 +83,24 @@ class _MenuScreenState extends State<MenuScreen> {
                   ),
                 ),
               ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Column(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {}, child: const Icon(Icons.add)),
+                  if (listeCategorie.length == 5)
+                    ElevatedButton(
+                        onPressed: () {}, child: const Icon(Icons.edit)),
+                  if (listeCategorie.length == 5)
+                    ElevatedButton(
+                        onPressed: () {}, child: const Icon(Icons.remove)),
+                ],
+              ),
+            )
           ],
         ),
       ),
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),*/
     );
   }
 }
