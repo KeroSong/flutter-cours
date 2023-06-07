@@ -33,7 +33,7 @@ final List<String> alphabet = [
 
 Future<List<int>> jsonCategorie() async {
   String jsonContent =
-      await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
+      await rootBundle.loadString('Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 
@@ -47,7 +47,7 @@ Future<List<int>> jsonCategorie() async {
 
 Future<List<String>> jsonMots(int random, int categorie) async {
   String jsonContent =
-      await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
+      await rootBundle.loadString('Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 
@@ -65,7 +65,7 @@ Future<List<String>> jsonMots(int random, int categorie) async {
 
 void ajouter(String mot) async {
   String jsonContent =
-      await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
+      await rootBundle.loadString('Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 
@@ -74,12 +74,12 @@ void ajouter(String mot) async {
   wordList.add({'mot': mot, 'categorie': 4});
 
   String newJsonContent = jsonEncode(jsonData);
-  await File('../../Data/Pendu_Liste_Mots.json').writeAsString(newJsonContent);
+  await File('Data/Pendu_Liste_Mots.json').writeAsString(newJsonContent);
 }
 
 void modifier(int idModify, String mot) async {
   String jsonContent =
-      await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
+      await rootBundle.loadString('Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 
@@ -100,7 +100,7 @@ void modifier(int idModify, String mot) async {
 
 void supprimer(int idRemove) async {
   String jsonContent =
-      await rootBundle.loadString('../../Data/Pendu_Liste_Mots.json');
+      await rootBundle.loadString('Data/Pendu_Liste_Mots.json');
 
   Map<String, dynamic> jsonData = jsonDecode(jsonContent);
 
@@ -111,5 +111,5 @@ void supprimer(int idRemove) async {
   wordList.removeWhere((element) => element['id'] == id);
 
   String newJsonContent = jsonEncode(jsonData);
-  await File('../../Data/Pendu_Liste_Mots.json').writeAsString(newJsonContent);
+  await File('Data/Pendu_Liste_Mots.json').writeAsString(newJsonContent);
 }
