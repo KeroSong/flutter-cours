@@ -103,7 +103,7 @@ class _GameScreenState extends State<GameScreen> {
         ),
         child: Text(
           buttonText,
-          style: const TextStyle(fontSize: 19.0, color: Colors.white),
+          style: const TextStyle(fontSize: 10.0, color: Colors.white),
         ),
       ),
     );
@@ -130,7 +130,7 @@ class _GameScreenState extends State<GameScreen> {
                   Expanded(
                     flex: 4,
                     child: Text(_getTittleText(widget.categorie),
-                        style: const TextStyle(fontSize: 20.0)),
+                        style: const TextStyle(fontSize: 15.0)),
                   ),
                   Expanded(
                     flex: 3,
